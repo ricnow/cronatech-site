@@ -1,105 +1,181 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronatech Sistemas</title>
-    <meta name="description" content="Desenvolvimento de soluções tecnológicas focadas em mobilidade e produtividade.">
-    <style>
-        :root {
-            --primary: #2563eb; /* Azul Tech */
-            --dark: #1e293b; /* Fundo escuro do Hero */
-            --light: #f8fafc; /* Fundo claro do corpo */
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        header {
-            background-color: white; /* Fundo branco para o logo se destacar */
-            padding: 15px 10%; /* Padding ajustado */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center; /* Centraliza o logo verticalmente */
-        }
-        /* CLASSE NOVA PARA O LOGO */
-        .logo-img {
-            height: 60px; /* Altura fixa para não ficar gigante */
-            width: auto;  /* Largura automática para não distorcer */
-            display: block;
-        }
-        .hero {
-            padding: 80px 10%;
-            text-align: center;
-            /* Gradiente que combina com o azul do logo */
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: white;
-        }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 40px auto; }
-        .products { padding: 60px 10%; }
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            max-width: 400px;
-            margin: 0 auto;
-            border-left: 5px solid var(--primary); /* Borda azul combinando */
-        }
-        footer {
-            background-color: #cbd5e1;
-            padding: 40px 10%;
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
-        .legal-info {
-            border-top: 1px solid #94a3b8;
-            margin-top: 20px;
-            padding-top: 20px;
-            font-size: 0.8rem;
-            color: #475569;
-        }
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cronatech Sistemas - Tecnologia Inteligente para Mobilidade</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#225fec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
     </style>
 </head>
-<body>
-
-    <header>
-        <img src="logo_cronatech.png" alt="Cronatech Sistemas" class="logo-img">
-    </header>
-
-    <section class="hero">
-        <h2>Tecnologia que impulsiona</h2>
-        <p>Desenvolvemos soluções inteligentes para desktop e mobile, focadas em otimizar processos e facilitar o dia a dia.</p>
-    </section>
-
-    <section class="products">
-        <h3 style="text-align: center; margin-bottom: 40px;">Nossos Produtos</h3>
-        
-        <div class="product-card">
-            <h3>Drivio (Copiloto)</h3>
-            <p>Assistente inteligente para motoristas de aplicativo. Monitoramento de corridas e acessibilidade em tempo real para Android.</p>
-            <small style="color: var(--primary); font-weight: bold;">Em breve na Google Play Store</small>
-        </div>
-    </section>
-
-    <footer>
-        <div class="contact">
-            <strong>Contato Comercial</strong><br>
-            <a href="mailto:contato@cronatech.com.br" style="color: inherit; text-decoration: none;">contato@cronatech.com.br</a>
-        </div>
-
-        <div class="legal-info">
-            <p><strong>Cronatech Sistemas</strong> (Nome Fantasia)</p>
-            <p>Razão Social: RICHELLE RODRIGUES SOARES 30356937810</p>
-            <p>CNPJ: 47.790.151/0001-54 </p>
-            <p>Endereço: Rua Dias Mendes, 30 - São Paulo - SP - Brasil</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 md:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+    <img src="logo_cronatech.png" alt="Logo Cronatech" class="h-10 w-auto">
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Cronatech Sistemas</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Produtos</a>
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Sobre</a>
+<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Contato</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Conheça o Drivio</span>
+</button>
+</div>
+</header>
+<!-- HeroSection -->
+<main class="flex-grow">
+<div class="@container pt-10">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract background with glowing blue nodes and network lines" style='background-image: linear-gradient(rgba(16, 22, 34, 0.8) 0%, rgba(16, 22, 34, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlVdXwLT3igK134OvOwc18rkMSvojAwq-QAV1TEtgp3T0D8rKXNFB1iQeWSb0pGMkPvd4ybTrYCflPT6pZt8oo8QiVKPPn447X5kxuaczXj79BjdNnlkDZIkXvkMu7GtURRwkeqKeElrV6GQJmKNMP7q5buf04DesE0Sg2nOS4vNi1lcTGeSekllHExDYUtiBstUZA27KdjxN7gc_Jo0UZOB7q_VQ0ZPdaroBNAHvtiBjKo3ghBuP_Zl24JxOjQipyNw3979CrCkMz");'>
+<div class="flex flex-col gap-4 items-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-2xl">
+                                            Tecnologia Inteligente para Mobilidade
+                                        </h1>
+<h2 class="text-white/80 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal max-w-xl">
+                                            Soluções de software móvel e desktop desenvolvidas para impulsionar a eficiência e a inovação no seu dia a dia.
+                                        </h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
+<span class="truncate">Descubra Nossas Soluções</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FeatureSection -->
+<div class="flex flex-col gap-10 px-4 py-16 @container items-center">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+<div class="flex flex-col gap-4 text-left">
+<h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        Drivio: Monitoramento de Corridas em Tempo Real
+                                    </h2>
+<p class="text-white/80 text-base font-normal leading-relaxed">
+                                        Apresentamos o Drivio, nossa principal solução projetada para motoristas profissionais. Monitore suas corridas em tempo real, gerencie finanças e otimize seu desempenho com uma interface intuitiva e poderosa.
+                                    </p>
+<ul class="mt-2 space-y-3 text-white/80">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+<span>Gestão completa na palma da mão.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+<span>Controle financeiro detalhado.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+<span>Análise de desempenho para otimização de ganhos.</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-center">
+<img alt="Mockup of Drivio app interface on an Android smartphone" class="max-h-[500px] object-contain rounded-xl shadow-2xl shadow-primary/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Ilo4H8HTu6KJr7UJYeCJ9DAP0DleO44hN4rtjcWsJfukITpFmMSwdGijes-ij22eUqxH1Qd1vTJG-WrYmxy0QQ4ypQt8mRvhZy3puP1mvFfp13sdMAsRJ81JuyRbM6cyVYT2aGXlcyl6kEDRD1mtPB3NyrQaURs_0tUfNvwgwEoE-7LoFgQH6wARD33pka36GzxL2wjbznRKZG9EhttmJEzrRoQkPEt158_NavhZ01eq5eGkyKfFy39XUYSJTNpjCysxLJ7zaWVc"/>
+</div>
+</div>
+</div>
+<!-- Tech Stack Section -->
+<div class="py-16">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-5 pt-5 text-center">Nossa Tecnologia</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary">phone_android</span>
+<h3 class="text-white text-base font-bold leading-tight">Android</h3>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary">code</span>
+<h3 class="text-white text-base font-bold leading-tight">Kotlin</h3>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary">hub</span>
+<h3 class="text-white text-base font-bold leading-tight">Node.js</h3>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-3xl text-primary">grid_view</span>
+<h3 class="text-white text-base font-bold leading-tight">Electron</h3>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<div class="flex flex-col gap-4 p-4 py-16 text-center items-center">
+<h2 class="text-white tracking-light text-[32px] font-bold leading-tight max-w-[720px]">Sobre a Cronatech Sistemas</h2>
+<p class="text-white/80 text-base font-normal leading-relaxed max-w-[720px]">
+                                Somos uma software house apaixonada por inovação e dedicada a criar soluções tecnológicas que resolvem problemas reais. Nossa missão é desenvolver aplicativos móveis e sistemas desktop que se destacam pela qualidade, performance e por uma experiência de usuário impecável, impulsionando o sucesso dos nossos clientes.
+                            </p>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-solid border-white/10 mt-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-10 py-10">
+<div>
+<h3 class="text-white font-bold mb-3">Navegação</h3>
+<ul class="space-y-2">
+<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="#">Produtos</a></li>
+<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="#">Sobre</a></li>
+<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="#">Contato</a></li>
+<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="privacidade.html">Política de Privacidade</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-3">Contato</h3>
+<p class="text-white/70 text-sm">E-mail: contato@cronatech.com.br</p>
+</div>
+<div>
+<h3 class="text-white font-bold mb-3">Informações Legais</h3>
+<ul class="space-y-1 text-sm text-white/70">
+<li>Razão Social: RICHELLE RODRIGUES SOARES 30356937810</li>
+<li>CNPJ: 47.790.151/0001-54</li>
+<li>Endereço: Rua Dias Mendes, 30 - São Paulo, SP</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-solid border-white/10 text-center px-4 md:px-10 py-5">
+<p class="text-white/60 text-xs">© 2024 Cronatech Sistemas. Todos os direitos reservados.</p>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
