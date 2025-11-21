@@ -1,177 +1,154 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-br"><head>
+<html lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cronatech Sistemas - Tecnologia Inteligente para Mobilidade</title>
+<title>Cronatech - Soluções Inteligentes para Mobilidade</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
+<script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "primary": "#225fec",
-              "background-light": "#f6f6f8",
-              "background-dark": "#101622",
+              "primary": "#2b8cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "text-light": "#0d141b",
+              "text-dark": "#e7edf3",
+              "text-muted-light": "#4c739a",
+              "text-muted-dark": "#a0b3c7"
             },
             fontFamily: {
-              "display": ["Inter", "sans-serif"]
+              "display": ["Space Grotesk", "sans-serif"]
             },
-            borderRadius: {
-              "DEFAULT": "0.25rem",
-              "lg": "0.5rem",
-              "xl": "0.75rem",
-              "full": "9999px"
-            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
           },
         },
       }
     </script>
 <style>
       .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
     </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark">
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<div class="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-<!-- TopNavBar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-4 md:px-10 py-3">
-<div class="flex items-center gap-4 text-white">
-<div class="size-6 text-primary">
-    <img src="logo_cronatech.png" alt="Logo Cronatech" class="h-10 w-auto">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-text-dark/10 dark:border-text-light/10 px-4 sm:px-6 md:px-10 py-3">
+<div class="flex items-center gap-4 text-text-light dark:text-text-dark">
+
+
+    <img src="logo3.png" alt="Logo Cronatech" class="h-24 w-auto mr-4 object-contain">
+
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]"></h2>
 </div>
-<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Cronatech Sistemas</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<div class="flex items-center gap-9">
-<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Produtos</a>
-<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Sobre</a>
-<a class="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Contato</a>
-</div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<div class="hidden md:flex flex-1 justify-end items-center gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#produtos">Produtos</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#sobre">Sobre</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#contato">Contato</a>
+</nav>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
 <span class="truncate">Conheça o Drivio</span>
 </button>
 </div>
 </header>
-<!-- HeroSection -->
-<main class="flex-grow">
-<div class="@container pt-10">
+<main class="flex flex-col gap-10 md:gap-16 lg:gap-20">
+<section class="@container mt-5" id="hero">
 <div class="@[480px]:p-4">
-<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center px-4 py-10 @[480px]:px-10 text-center" data-alt="Abstract background with glowing blue nodes and network lines" style='background-image: linear-gradient(rgba(16, 22, 34, 0.8) 0%, rgba(16, 22, 34, 0.95) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlVdXwLT3igK134OvOwc18rkMSvojAwq-QAV1TEtgp3T0D8rKXNFB1iQeWSb0pGMkPvd4ybTrYCflPT6pZt8oo8QiVKPPn447X5kxuaczXj79BjdNnlkDZIkXvkMu7GtURRwkeqKeElrV6GQJmKNMP7q5buf04DesE0Sg2nOS4vNi1lcTGeSekllHExDYUtiBstUZA27KdjxN7gc_Jo0UZOB7q_VQ0ZPdaroBNAHvtiBjKo3ghBuP_Zl24JxOjQipyNw3979CrCkMz");'>
-<div class="flex flex-col gap-4 items-center">
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-2xl">
-                                            Tecnologia Inteligente para Mobilidade
-                                        </h1>
-<h2 class="text-white/80 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal max-w-xl">
-                                            Soluções de software móvel e desktop desenvolvidas para impulsionar a eficiência e a inovação no seu dia a dia.
-                                        </h2>
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="Abstract image representing technology and code with blue and purple tones" style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(16, 25, 34, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmEj-ko6oVuNBgbrhLGmvqNtVgUnU6YCJ9fKmgNx2iEevSr3-ULQE76iv6CEj04cR2N2-_DVqhOGmyVUd9I3IoY0wY56XKMWBgkrDSdpUYqLiJACzLhF7tHXrk1sw9l7wIkD-lXRwcNQLyqdh2hk9GsDLhKdlXVThuYM4BnkvL2Sz4ch9uRLe6f5rM-FeWGjGD-j5VKRRRQTtGTDTORf5SWpziXauZsIu6k7sadsoNboxV5373iaCHTZy0W0Us5aYMyI-e-cXqBnn1");'>
+<div class="flex flex-col gap-2 text-left max-w-2xl">
+<h1 class="text-white text-4xl font-bold leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        Tecnologia Inteligente para Mobilidade
+                                    </h1>
+<h2 class="text-slate-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                        Desenvolvemos soluções mobile e desktop de alta performance para aumentar a produtividade e otimizar processos.
+                                    </h2>
 </div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-<span class="truncate">Descubra Nossas Soluções</span>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Nossos Produtos</span>
 </button>
 </div>
 </div>
+</section>
+<section class="flex flex-col gap-10 px-4 py-10 @container" id="produtos">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+<div class="flex flex-col gap-4">
+<h2 class="text-text-light dark:text-text-dark tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                    Drivio: Seu copiloto inteligente
+                                </h2>
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed">
+                                    Monitoramento de corridas em tempo real e acessibilidade para motoristas profissionais. O Drivio oferece uma interface intuitiva para acompanhar suas métricas e rotas com facilidade, através de um design limpo e funcional, otimizando sua performance e segurança.
+                                </p>
 </div>
-<!-- FeatureSection -->
-<div class="flex flex-col gap-10 px-4 py-16 @container items-center">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-<div class="flex flex-col gap-4 text-left">
-<h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                                        Drivio: Monitoramento de Corridas em Tempo Real
-                                    </h2>
-<p class="text-white/80 text-base font-normal leading-relaxed">
-                                        Apresentamos o Drivio, nossa principal solução projetada para motoristas profissionais. Monitore suas corridas em tempo real, gerencie finanças e otimize seu desempenho com uma interface intuitiva e poderosa.
-                                    </p>
-<ul class="mt-2 space-y-3 text-white/80">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
-<span>Gestão completa na palma da mão.</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
-<span>Controle financeiro detalhado.</span>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
-<span>Análise de desempenho para otimização de ganhos.</span>
-</li>
-</ul>
-</div>
-<div class="flex justify-center">
-<img alt="Mockup of Drivio app interface on an Android smartphone" class="max-h-[500px] object-contain rounded-xl shadow-2xl shadow-primary/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Ilo4H8HTu6KJr7UJYeCJ9DAP0DleO44hN4rtjcWsJfukITpFmMSwdGijes-ij22eUqxH1Qd1vTJG-WrYmxy0QQ4ypQt8mRvhZy3puP1mvFfp13sdMAsRJ81JuyRbM6cyVYT2aGXlcyl6kEDRD1mtPB3NyrQaURs_0tUfNvwgwEoE-7LoFgQH6wARD33pka36GzxL2wjbznRKZG9EhttmJEzrRoQkPEt158_NavhZ01eq5eGkyKfFy39XUYSJTNpjCysxLJ7zaWVc"/>
+<div class="flex justify-center items-center">
+<img alt="Mockup of Drivio app on an Android phone screen" class="w-full max-w-xs h-auto rounded-xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC78w2BhhY7MbPTCx0oK0MHhszOZ2OHLzelM3y0aaOmQ8OtKVvU3F6TPm9vJMBIOEX_gvToQ9-jSZ6QuNWSaMNXBoQ8Xjx3vbhkV4VBA94C0jzK34TbYz9baJBUUJ39Ijqkrrh-rL1XTHn3aWSnKnFTB6zI_6lZ-9o1yrPjIRNwXoufsWchy0xI8vUrgAhb3DoNC-CM2Y0ItciCO5bvyZADIFzrPcLll-PvtABBbMjliMiOrGcuLKHAhhcEmw6paAW9Qo0zs8lsv-ON"/>
 </div>
 </div>
+</section>
+<section class="flex flex-col gap-6 py-10" id="tecnologias">
+<h4 class="text-text-muted-light dark:text-text-muted-dark text-sm font-bold leading-normal tracking-[0.015em] px-4 py-2 text-center">Tecnologias que Utilizamos</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 items-center justify-items-center">
+<div class="flex flex-col items-center gap-2 p-4 text-center">
+<img alt="Android logo" class="h-12 w-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw9ODHFfkix3VnazNtnW0zaX3vbx5nwgp6hFbGf7QjuvZfajluBO1Ke60JWkFqWtQwd0EciHkHB_-dug7XZjOmtUqczFbPHzHn92Lwkt5TTszCpidqA9VW6LowOR0vplr5GICN48El3vr-Q_BsUOhg3YYA5E7Yo4PkLsKLaHWnwnG9OrjNjuq1zHp0oYMfaIhujR2FLoRgpLoKWn3bSH9y4EqiUQZ9BYfFifEzpcEPcrxPSuGQ7HjMVeWLGMeTu_l5I0UtMw11DMK_"/>
+<p class="font-medium text-sm text-text-muted-light dark:text-text-muted-dark">Android</p>
 </div>
-<!-- Tech Stack Section -->
-<div class="py-16">
-<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-5 pt-5 text-center">Nossa Tecnologia</h2>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary">phone_android</span>
-<h3 class="text-white text-base font-bold leading-tight">Android</h3>
+<div class="flex flex-col items-center gap-2 p-4 text-center">
+<img alt="Kotlin logo" class="h-12 w-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUp1k0LM13liImlB8W98ifwjtWbpXZ8k7pACjy48AshigaeongtE_S5S1NZn4cddnJ272ONKE3FTy5jBuTJMt8gzft-NnkUF-tFcsF_VbzM-n-0eHT3f8sN4GWyYDL-gORSmQvrAWbimhR8BAAcbTyGHZy5zQW3wtEDfSiBBxuyR5NElNviMJDJwW7Lw37XiNFEXm9uqg_1oCcvfzA-hDXKJ2WhmAC4cF36ef0L3o56g0aHfqDbbD0kCsZnq36H9SgcOHgGmmhxfWW"/>
+<p class="font-medium text-sm text-text-muted-light dark:text-text-muted-dark">Kotlin</p>
 </div>
-<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary">code</span>
-<h3 class="text-white text-base font-bold leading-tight">Kotlin</h3>
+<div class="flex flex-col items-center gap-2 p-4 text-center">
+<img alt="Node.js logo" class="h-12 w-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRfICSOZDxOpsuVBNNn303i6SFCDfEI37dNSTx8B5em1iEgt5B9izJk148BH5Yn_IDsSK1IO_uB2YdZtl9S8bJqPW19ogwFEEn1UqJG-kvWK19z68OCdsS-vboVqx55tCYm3nCOEXZPYh-JNXFLRXAd9ezhWktmCok-aYwR8G29xw2d4hjLnCK_0yv-88Rgg3Kkqcz4svkAsUClooubuc_a2hT5yi9jYcvTHecmF_njQYcRuBlQQ_QYzj9jGINkIyroTKoyhNL8VKU"/>
+<p class="font-medium text-sm text-text-muted-light dark:text-text-muted-dark">Node.js</p>
 </div>
-<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary">hub</span>
-<h3 class="text-white text-base font-bold leading-tight">Node.js</h3>
-</div>
-<div class="flex flex-1 gap-4 rounded-xl border border-white/10 bg-white/5 p-4 items-center justify-center hover:bg-white/10 transition-colors">
-<span class="material-symbols-outlined text-3xl text-primary">grid_view</span>
-<h3 class="text-white text-base font-bold leading-tight">Electron</h3>
-</div>
+<div class="flex flex-col items-center gap-2 p-4 text-center">
+<img alt="Electron logo" class="h-12 w-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd5P_DzF9UKZ1BBZXmmkbqQYupaXr2TFhWeMNddFbowUQg0vlMfWe0I5nNF-xfMboTe2MbW2262IiFXA23fei_p9jbbK78JjXfLpzNeBtg6OivuF2qkv4hKHdYr6SBmBvtawHYBSCPsESnG8R5vB6EHWGHcApHbQ13-bhBLJdzVj1JKMjY4ZC708DVPMGqzPzsEgnwB7-W6z-L0Ik8A9Shaor2Jvwsr3hpd9OXIUxiCuK8uzYbkpQa6qO7bu_0aXRm6jVB15TGLzc6"/>
+<p class="font-medium text-sm text-text-muted-light dark:text-text-muted-dark">Electron</p>
 </div>
 </div>
-<!-- About Section -->
-<div class="flex flex-col gap-4 p-4 py-16 text-center items-center">
-<h2 class="text-white tracking-light text-[32px] font-bold leading-tight max-w-[720px]">Sobre a Cronatech Sistemas</h2>
-<p class="text-white/80 text-base font-normal leading-relaxed max-w-[720px]">
-                                Somos uma software house apaixonada por inovação e dedicada a criar soluções tecnológicas que resolvem problemas reais. Nossa missão é desenvolver aplicativos móveis e sistemas desktop que se destacam pela qualidade, performance e por uma experiência de usuário impecável, impulsionando o sucesso dos nossos clientes.
-                            </p>
-</div>
+</section>
+<section class="flex flex-col gap-4 px-4 py-10 text-center items-center bg-white dark:bg-background-dark/50 rounded-lg" id="sobre">
+<h3 class="text-text-light dark:text-text-dark text-3xl font-bold leading-tight tracking-tight">Sobre Nós</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-relaxed max-w-2xl">
+                            Na Cronatech, somos apaixonados por transformar ideias em realidade através da tecnologia. Nossa missão é desenvolver soluções de software robustas e intuitivas que resolvem problemas complexos e aumentam a produtividade dos nossos clientes, impulsionando o sucesso de seus negócios no cenário digital.
+                        </p>
+</section>
 </main>
-<!-- Footer -->
-<footer class="border-t border-solid border-white/10 mt-10">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-10 py-10">
-<div>
-<h3 class="text-white font-bold mb-3">Navegação</h3>
-<ul class="space-y-2">
-<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="#">Produtos</a></li>
-<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="#">Sobre</a></li>
-<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="#">Contato</a></li>
-<li><a class="text-white/70 hover:text-primary text-sm transition-colors" href="privacidade.html">Política de Privacidade</a></li>
-</ul>
+<footer class="w-full mt-16 pt-10 pb-8 border-t border-solid border-text-dark/10 dark:border-text-light/10" id="contato">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill-rule="evenodd"></path>
+</svg>
 </div>
-<div>
-<h3 class="text-white font-bold mb-3">Contato</h3>
-<p class="text-white/70 text-sm">E-mail: contato@cronatech.com.br</p>
+<h2 class="text-lg font-bold">Cronatech</h2>
 </div>
-<div>
-<h3 class="text-white font-bold mb-3">Informações Legais</h3>
-<ul class="space-y-1 text-sm text-white/70">
-<li>Razão Social: RICHELLE RODRIGUES SOARES 30356937810</li>
-<li>CNPJ: 47.790.151/0001-54</li>
-<li>Endereço: Rua Dias Mendes, 30 - São Paulo, SP</li>
-</ul>
+<p class="text-text-muted-light dark:text-text-muted-dark">© 2024 Cronatech. Todos os direitos reservados.</p>
 </div>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-text-light dark:text-text-dark">Links</h5>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="#produtos">Produtos</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="#sobre">Sobre</a>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-primary transition-colors" href="privacidade.html">Política de Privacidade</a>
 </div>
-<div class="border-t border-solid border-white/10 text-center px-4 md:px-10 py-5">
-<p class="text-white/60 text-xs">© 2024 Cronatech Sistemas. Todos os direitos reservados.</p>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-text-light dark:text-text-dark">Informações</h5>
+<p class="text-text-muted-light dark:text-text-muted-dark">Razão Social: RICHELLE RODRIGUES SOARES 30356937810</p>
+<p class="text-text-muted-light dark:text-text-muted-dark">CNPJ: 47.790.151/0001-54</p>
+<p class="text-text-muted-light dark:text-text-muted-dark">Endereço: Rua Dias Mendes, 30, São Paulo - SP</p>
+<p class="text-text-muted-light dark:text-text-muted-dark">E-mail: contato@cronatech.com.br</p>
+</div>
 </div>
 </footer>
 </div>
