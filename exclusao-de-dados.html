@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusão de Conta e Dados - Drivio | Cronatech Sistemas</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2563eb; }
+        h2 { color: #1e293b; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 30px; }
+        .info-box { background-color: #eff6ff; border-left: 5px solid #2563eb; padding: 15px; margin: 20px 0; }
+        form { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        label { display: block; font-weight: bold; margin-top: 15px; }
+        input[type="email"], input[type="text"], textarea {
+            width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #cbd5e1;
+            border-radius: 5px; font-size: 1em; box-sizing: border-box; font-family: inherit;
+        }
+        .check { margin-top: 12px; }
+        .check label { display: inline; font-weight: normal; }
+        button {
+            background-color: #2563eb; color: #fff; border: none; border-radius: 5px;
+            padding: 12px 24px; font-size: 1em; cursor: pointer; margin-top: 20px;
+        }
+        button:hover { background-color: #1d4ed8; }
+        footer { margin-top: 50px; font-size: 0.9em; color: #666; border-top: 1px solid #ddd; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Exclusão de Conta e Dados — Drivio</h1>
+
+    <p>Esta página permite que usuários do aplicativo <strong>Drivio</strong>, desenvolvido pela <strong>Cronatech Sistemas</strong>, solicitem a exclusão dos seus dados, conforme a <a href="/privacidade">Política de Privacidade</a> e a Lei Geral de Proteção de Dados (LGPD).</p>
+
+    <h2>Quais dados o Drivio mantém?</h2>
+    <p>
+    • <strong>Dados financeiros e de corridas</strong>: ficam armazenados <strong>apenas no seu aparelho</strong>. Ao desinstalar o aplicativo, eles são apagados automaticamente;<br>
+    • <strong>Backup no Google Drive</strong> (se ativado): fica em uma pasta privada da <strong>sua própria conta Google</strong> — nós não temos acesso a ele;<br>
+    • <strong>Dados de uso e diagnóstico</strong>: eventos de uso e relatórios de falhas pseudonimizados, processados pelo Google Firebase em nosso nome;<br>
+    • <strong>Nome e e-mail</strong>: usados localmente para identificação no aplicativo e na assinatura.</p>
+
+    <div class="info-box">
+        <strong>Você mesmo pode excluir o backup do Drive:</strong> acesse
+        <a href="https://drive.google.com" target="_blank" rel="noopener">drive.google.com</a> →
+        Configurações → Gerenciar apps → Drivio → "Excluir dados ocultos do app".
+    </div>
+
+    <h2>Solicitar exclusão</h2>
+    <p>Preencha o formulário abaixo. Ele abrirá seu aplicativo de e-mail com a solicitação pronta para envio a <strong>contato@cronatech.com.br</strong>. Atendemos solicitações em até <strong>15 dias</strong> e confirmamos a conclusão por e-mail.</p>
+
+    <form onsubmit="enviarSolicitacao(event)">
+        <label for="email">E-mail da conta Google usada no aplicativo *</label>
+        <input type="email" id="email" required placeholder="seu-email@gmail.com">
+
+        <label for="nome">Nome (opcional)</label>
+        <input type="text" id="nome" placeholder="Como você se identifica no app">
+
+        <label>O que deseja excluir?</label>
+        <div class="check">
+            <input type="checkbox" id="chkTelemetria" checked>
+            <label for="chkTelemetria">Dados de uso e diagnóstico (telemetria)</label>
+        </div>
+        <div class="check">
+            <input type="checkbox" id="chkConta">
+            <label for="chkConta">Todos os dados associados à minha conta (exclusão completa)</label>
+        </div>
+
+        <label for="obs">Observações (opcional)</label>
+        <textarea id="obs" rows="3" placeholder="Alguma informação adicional"></textarea>
+
+        <button type="submit">Enviar solicitação por e-mail</button>
+    </form>
+
+    <p>Se preferir, envie sua solicitação diretamente para <a href="mailto:contato@cronatech.com.br?subject=Exclus%C3%A3o%20de%20dados%20-%20Drivio">contato@cronatech.com.br</a> com o assunto "Exclusão de dados - Drivio", informando o e-mail usado no aplicativo.</p>
+
+    <h2>O que acontece após a solicitação</h2>
+    <p>
+    • Excluímos os dados de uso e diagnóstico vinculados à sua instância do aplicativo nos sistemas do Firebase;<br>
+    • Orientamos a remoção do backup do Google Drive (que só você pode excluir, por estar na sua conta);<br>
+    • Dados locais do aparelho são removidos ao desinstalar o aplicativo;<br>
+    • Eventuais registros de assinatura junto ao Google Play seguem a política de retenção do próprio Google Play.</p>
+
+    <footer>
+        <p><strong>Cronatech Sistemas</strong><br>
+        <a href="mailto:contato@cronatech.com.br">contato@cronatech.com.br</a><br>
+        <a href="https://www.cronatech.com.br">www.cronatech.com.br</a></p>
+    </footer>
+
+    <script>
+        function enviarSolicitacao(e) {
+            e.preventDefault();
+            var email = document.getElementById('email').value;
+            var nome = document.getElementById('nome').value;
+            var obs = document.getElementById('obs').value;
+            var itens = [];
+            if (document.getElementById('chkTelemetria').checked) itens.push('Dados de uso e diagnóstico (telemetria)');
+            if (document.getElementById('chkConta').checked) itens.push('Todos os dados associados à conta (exclusão completa)');
+
+            var corpo = 'Solicitação de exclusão de dados - Drivio\n\n'
+                + 'E-mail da conta usada no app: ' + email + '\n'
+                + (nome ? 'Nome: ' + nome + '\n' : '')
+                + 'Dados a excluir:\n- ' + (itens.length ? itens.join('\n- ') : 'Não especificado') + '\n'
+                + (obs ? '\nObservações: ' + obs + '\n' : '');
+
+            window.location.href = 'mailto:contato@cronatech.com.br'
+                + '?subject=' + encodeURIComponent('Exclusão de dados - Drivio')
+                + '&body=' + encodeURIComponent(corpo);
+        }
+    </script>
+
+</body>
+</html>
