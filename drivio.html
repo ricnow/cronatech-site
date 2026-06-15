@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth scroll-pt-24 overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivio Copiloto - Copiloto Financeiro para Motoristas de Aplicativo | Cronatech</title>
+    <meta name="description"
+        content="Drivio Copiloto é o aplicativo para motoristas de Uber e 99 que analisa cada corrida em tempo real, calcula rentabilidade e organiza a gestão financeira da rotina." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        primary: {
+                            DEFAULT: '#00C2E0',
+                            light: '#67e8f9',
+                            dark: '#0891b2',
+                        },
+                        accent: {
+                            DEFAULT: '#00D563',
+                            light: '#34d399',
+                            dark: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(0, 194, 224, 0.5)',
+                        'neon-green': '0 0 20px rgba(0, 213, 99, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-border {
+            border: 1px solid rgba(0, 194, 224, 0.3);
+            box-shadow: 0 0 15px rgba(0, 194, 224, 0.15);
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(0, 194, 224, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200 bg-grid-pattern overflow-x-hidden relative w-full max-w-[100vw]">
+
+    <div
+        class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl opacity-30 translate-x-1/2 -translate-y-1/2 pointer-events-none">
+    </div>
+    <div
+        class="absolute top-1/3 left-0 w-80 h-80 bg-accent/20 rounded-full filter blur-3xl opacity-20 -translate-x-1/2 pointer-events-none">
+    </div>
+
+    <header class="fixed w-full left-0 top-0 z-50 glass transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group">
+                <img src="logo3.png" alt="Cronatech Logo"
+                    class="h-12 w-auto object-contain mr-3 group-hover:opacity-80 transition-opacity">
+                <span class="text-white font-bold text-xl hidden sm:block">Cronatech</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="#features" class="hover:text-primary transition-colors">Funcionalidades</a>
+                <a href="#privacidade" class="hover:text-primary transition-colors">Privacidade</a>
+                <a href="privacidade.html" class="hover:text-primary transition-colors">Política</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-20 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-block py-1 px-3 rounded-full bg-slate-800 border border-slate-700 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                    Aplicativo para motoristas
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                    Drivio Copiloto
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-4 font-medium">
+                    Seu copiloto financeiro nas corridas de Uber e 99.
+                </p>
+                <p class="text-base md:text-lg text-slate-400 mb-10 max-w-2xl mx-auto">
+                    O Drivio Copiloto analisa cada oferta de corrida em tempo real, calcula
+                    R$/km e R$/hora na hora e organiza toda a gestão financeira da sua rotina
+                    de trabalho — tudo em um único aplicativo.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+                        class="bg-primary hover:bg-primary-light text-slate-900 font-bold py-3 px-8 rounded-full shadow-neon transition-all flex items-center justify-center">
+                        <span class="material-icons-round mr-2">android</span> Baixar na Play Store
+                    </a>
+                    <a href="#features"
+                        class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-8 rounded-full border border-slate-700 hover:border-primary/50 transition-all flex items-center justify-center">
+                        Conheça os recursos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    O que o Drivio Copiloto faz por você
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Funcionalidades pensadas para motoristas de aplicativo profissional.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="glass rounded-2xl p-6 neon-border">
+                    <span class="material-icons-round text-primary text-4xl mb-4">visibility</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Análise em tempo real</h3>
+                    <p class="text-slate-400 text-sm">
+                        Cada oferta de corrida da Uber ou 99 é analisada na hora.
+                        O Drivio Copiloto mostra R$/km, R$/hora e ajuda a decidir em segundos.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-6 neon-border">
+                    <span class="material-icons-round text-primary text-4xl mb-4">attach_money</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Gestão financeira</h3>
+                    <p class="text-slate-400 text-sm">
+                        Controle de expedientes, corridas, abastecimentos, despesas fixas e
+                        variáveis. Saiba seu lucro líquido real, não só o bruto.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-6 neon-border">
+                    <span class="material-icons-round text-primary text-4xl mb-4">flag</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Metas inteligentes</h3>
+                    <p class="text-slate-400 text-sm">
+                        Defina objetivos diários e mensais. O Drivio Copiloto acompanha o
+                        progresso e prevê seu fechamento ao longo do dia.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-6 neon-border">
+                    <span class="material-icons-round text-primary text-4xl mb-4">videocam</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Dashcam integrada</h3>
+                    <p class="text-slate-400 text-sm">
+                        Gravação local do expediente para sua segurança. Rotação automática de
+                        arquivos com limite de armazenamento configurável.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-6 neon-border">
+                    <span class="material-icons-round text-primary text-4xl mb-4">cloud_done</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Backup no Google Drive</h3>
+                    <p class="text-slate-400 text-sm">
+                        Seus dados financeiros ficam seguros em uma pasta privada do seu Drive,
+                        acessível apenas pelo Drivio Copiloto. Nada é compartilhado com terceiros.
+                    </p>
+                </div>
+
+                <div class="glass rounded-2xl p-6 neon-border">
+                    <span class="material-icons-round text-primary text-4xl mb-4">insights</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Relatórios mensais</h3>
+                    <p class="text-slate-400 text-sm">
+                        Histórico completo com filtros, exportação em CSV e relatório mensal
+                        consolidado de faturamento, lucro e quilometragem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacidade" class="py-20 relative">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto glass rounded-3xl p-8 md:p-12 neon-border">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                    Privacidade no Drivio Copiloto
+                </h2>
+                <p class="text-slate-300 mb-6">
+                    O Drivio Copiloto usa o serviço de acessibilidade do Android exclusivamente
+                    para ler as informações de ofertas de corrida exibidas na sua tela
+                    (valor, distância, tempo). Nenhum dado pessoal, senha ou informação
+                    bancária é capturado.
+                </p>
+                <p class="text-slate-300 mb-6">
+                    O backup no Google Drive utiliza uma pasta privada do aplicativo
+                    (<code class="text-primary">appDataFolder</code>), acessível apenas pelo
+                    Drivio Copiloto. Não temos acesso aos seus arquivos pessoais.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                    <a href="privacidade.html"
+                        class="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-6 rounded-full border border-slate-700 hover:border-primary/50 transition-all text-center">
+                        Política de Privacidade
+                    </a>
+                    <a href="termos.html"
+                        class="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-6 rounded-full border border-slate-700 hover:border-primary/50 transition-all text-center">
+                        Termos de Serviço
+                    </a>
+                    <a href="exclusao-de-dados.html"
+                        class="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-6 rounded-full border border-slate-700 hover:border-primary/50 transition-all text-center">
+                        Exclusão de dados
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t border-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-slate-400 text-sm mb-2">
+                <strong class="text-white">Drivio Copiloto</strong> é um produto da
+                <a href="index.html" class="text-primary hover:underline">Cronatech Sistemas</a>.
+            </p>
+            <p class="text-slate-500 text-xs">
+                Contato: <a href="mailto:contato@cronatech.com.br"
+                    class="hover:text-primary">contato@cronatech.com.br</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
