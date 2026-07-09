@@ -4,7 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronatech Sistemas | Tecnologia Inteligente</title>
+    <title>Cronatech Sistemas | Software de Gestão e Apps Inteligentes</title>
+    <meta name="description"
+        content="Cronatech Sistemas: software house brasileira. Gestão completa para empresas com o Gexta (PDV, NF-e, financeiro) e copiloto financeiro para motoristas de app com o Drivio.">
+    <meta name="author" content="Cronatech Sistemas">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://cronatech.com.br/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo3.png">
+    <link rel="apple-touch-icon" href="logo3.png">
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cronatech Sistemas">
+    <meta property="og:title" content="Cronatech Sistemas | Tecnologia Inteligente">
+    <meta property="og:description"
+        content="Gestão completa para empresas com o Gexta e copiloto financeiro para motoristas com o Drivio. Tecnologia que gera resultados.">
+    <meta property="og:url" content="https://cronatech.com.br/">
+    <meta property="og:image" content="https://cronatech.com.br/capa_video.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cronatech Sistemas | Tecnologia Inteligente">
+    <meta name="twitter:description"
+        content="Gestão completa para empresas com o Gexta e copiloto financeiro para motoristas com o Drivio.">
+    <meta name="twitter:image" content="https://cronatech.com.br/capa_video.jpg">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWWWKHD0CG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-CWWWKHD0CG');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -60,6 +96,47 @@
             background-image: radial-gradient(rgba(43, 140, 238, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
+        /* Animação de revelação ao rolar */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Acordeão FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 
@@ -84,7 +161,7 @@
             <nav class="hidden md:flex items-center gap-8 font-medium">
                 <a href="#hero" class="hover:text-primary transition-colors">Home</a>
                 <a href="gexta.html" class="hover:text-green-400 transition-colors font-bold">Gexta (Gestão)</a>
-                <a href="#drivio" class="hover:text-blue-400 transition-colors">Drivio (Motoristas)</a>
+                <a href="drivio.html" class="hover:text-blue-400 transition-colors">Drivio (Motoristas)</a>
                 <a href="#sobre" class="hover:text-primary transition-colors">Sobre</a>
             </nav>
 
@@ -93,7 +170,7 @@
                     class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-6 rounded-full shadow-lg shadow-green-500/20 transition-all transform hover:scale-105 text-sm">
                     Para Empresas
                 </a>
-                <a href="#drivio"
+                <a href="drivio.html"
                     class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full shadow-neon transition-all transform hover:scale-105 text-sm">
                     Para Motoristas
                 </a>
@@ -112,7 +189,7 @@
                 <a href="#hero" class="text-slate-200 hover:text-primary py-2 mobile-link">Home</a>
                 <a href="gexta.html" class="text-green-400 hover:text-green-300 py-2 mobile-link font-bold">Conheça o
                     Gexta</a>
-                <a href="#drivio" class="text-blue-400 hover:text-blue-300 py-2 mobile-link">Conheça o Drivio</a>
+                <a href="drivio.html" class="text-blue-400 hover:text-blue-300 py-2 mobile-link">Conheça o Drivio</a>
                 <a href="#sobre" class="text-slate-200 hover:text-primary py-2 mobile-link">Sobre</a>
             </div>
         </div>
@@ -140,7 +217,7 @@
                         class="bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-green-500/20 transition-all flex items-center justify-center">
                         <span class="material-icons-round mr-2">storefront</span> Gexta (Empresas)
                     </a>
-                    <a href="#drivio"
+                    <a href="drivio.html"
                         class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-8 rounded-full border border-slate-700 hover:border-primary/50 transition-all flex items-center justify-center">
                         <span class="material-icons-round mr-2">directions_car</span> Drivio (Motoristas)
                     </a>
@@ -152,8 +229,35 @@
                 </div>
                 <!-- You might want to create a composite image or slider here, but for now keeping the abstract feel -->
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
-                    alt="Sistemas Cronatech"
+                    alt="Sistemas Cronatech" loading="lazy"
                     class="w-full max-w-md object-cover rounded-2xl shadow-2xl border-2 border-white/10 opacity-90">
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="py-12 border-y border-slate-800/60 bg-slate-900/40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <div class="text-4xl md:text-5xl font-black text-white" data-counter="2"
+                        data-suffix="">0</div>
+                    <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Produtos em Operação</p>
+                </div>
+                <div class="reveal" style="transition-delay: 0.1s">
+                    <div class="text-4xl md:text-5xl font-black text-green-500" data-counter="100"
+                        data-suffix="%">0</div>
+                    <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Dados Processados no Brasil</p>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s">
+                    <div class="text-4xl md:text-5xl font-black text-primary" data-counter="24"
+                        data-suffix="/7">0</div>
+                    <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Sistemas Disponíveis</p>
+                </div>
+                <div class="reveal" style="transition-delay: 0.3s">
+                    <div class="text-4xl md:text-5xl font-black text-purple-500" data-counter="100"
+                        data-suffix="%">0</div>
+                    <p class="text-sm text-slate-400 mt-2 uppercase tracking-wider">Foco em Performance</p>
+                </div>
             </div>
         </div>
     </section>
@@ -161,7 +265,7 @@
     <section id="gexta-home" class="py-20 bg-slate-850/30">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div
-                class="glass neon-border border-green-500/30 shadow-green-900/20 rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row-reverse items-center gap-12 relative overflow-hidden">
+                class="reveal glass neon-border border-green-500/30 shadow-green-900/20 rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row-reverse items-center gap-12 relative overflow-hidden">
                 <div
                     class="absolute top-0 left-0 w-96 h-96 bg-green-500/10 rounded-full filter blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none -z-10">
                 </div>
@@ -226,7 +330,7 @@
     <section id="drivio" class="py-20 relative">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div
-                class="glass neon-border rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
+                class="reveal glass neon-border rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
 
                 <div
                     class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none -z-10">
@@ -272,12 +376,19 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="mt-8">
+                        <a href="drivio.html"
+                            class="inline-flex items-center bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full shadow-neon transition-all transform hover:scale-105">
+                            <span class="material-icons-round mr-2">launch</span> Ver Página Completa & Baixar App
+                        </a>
+                    </div>
                 </div>
 
                 <div class="lg:w-1/2 w-full relative">
                     <div
                         class="rounded-2xl overflow-hidden shadow-neon border-2 border-primary/30 relative group cursor-pointer bg-slate-900">
-                        <img src="capa_video.png" alt="Capa do Vídeo Drivio"
+                        <img src="capa_video.jpg" alt="Capa do Vídeo Drivio" loading="lazy" width="1280"
+                            height="698"
                             class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
 
                         <div
@@ -297,33 +408,36 @@
 
     <section id="tecnologias" class="py-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Nosso Arsenal Tecnológico</h2>
                 <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Desenvolvemos com as ferramentas mais modernas para
                     garantir performance, estabilidade e escalabilidade.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group">
+                <div class="reveal glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group">
                     <span
                         class="material-icons-round text-5xl text-green-500 mb-4 bg-green-500/10 p-3 rounded-xl group-hover:scale-110 transition-transform">android</span>
                     <h3 class="text-xl font-bold text-white mb-2">Android Nativo</h3>
                     <p class="text-sm text-slate-400">Performance máxima e integração profunda com o sistema
                         operacional.</p>
                 </div>
-                <div class="glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group">
+                <div class="reveal glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group"
+                    style="transition-delay: 0.1s">
                     <span
                         class="material-icons-round text-5xl text-purple-500 mb-4 bg-purple-500/10 p-3 rounded-xl group-hover:scale-110 transition-transform">code</span>
                     <h3 class="text-xl font-bold text-white mb-2">Kotlin</h3>
                     <p class="text-sm text-slate-400">Código moderno, seguro e conciso para desenvolvimento mobile.</p>
                 </div>
-                <div class="glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group">
+                <div class="reveal glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group"
+                    style="transition-delay: 0.2s">
                     <span
                         class="material-icons-round text-5xl text-yellow-500 mb-4 bg-yellow-500/10 p-3 rounded-xl group-hover:scale-110 transition-transform">dns</span>
                     <h3 class="text-xl font-bold text-white mb-2">Node.js</h3>
                     <p class="text-sm text-slate-400">Back-end rápido e escalável para processamento em tempo real.</p>
                 </div>
-                <div class="glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group">
+                <div class="reveal glass neon-border rounded-2xl p-6 hover:bg-slate-800/80 transition-all text-center group"
+                    style="transition-delay: 0.3s">
                     <span
                         class="material-icons-round text-5xl text-blue-400 mb-4 bg-blue-400/10 p-3 rounded-xl group-hover:scale-110 transition-transform">desktop_windows</span>
                     <h3 class="text-xl font-bold text-white mb-2">Electron</h3>
@@ -352,8 +466,72 @@
                     class="absolute top-1/2 left-1/2 w-3/4 h-3/4 bg-primary/20 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2 -z-10">
                 </div>
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Equipe Cronatech"
+                    alt="Equipe Cronatech" loading="lazy"
                     class="rounded-2xl shadow-neon border border-white/10 w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Perguntas Frequentes</h2>
+                <p class="text-slate-400 mt-4">Tudo o que você precisa saber sobre nossos produtos.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item reveal glass neon-border rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex justify-between items-center text-left p-5 md:p-6 font-bold text-white">
+                        <span>O que diferencia o Gexta de outros sistemas de gestão?</span>
+                        <span class="material-icons-round faq-icon text-primary">expand_more</span>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-slate-400 pb-5 md:pb-6">O Gexta integra PDV, emissão de NFC-e/NF-e, controle
+                            financeiro e estoque em um só lugar, com um app mobile gerencial para o dono acompanhar tudo
+                            de qualquer lugar. Simples de usar e completo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal glass neon-border rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex justify-between items-center text-left p-5 md:p-6 font-bold text-white">
+                        <span>O Drivio acessa minhas senhas ou dados bancários?</span>
+                        <span class="material-icons-round faq-icon text-primary">expand_more</span>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-slate-400 pb-5 md:pb-6">Não. O Drivio usa a API de Acessibilidade do Android apenas
+                            para ler valores, distância e tempo das corridas e calcular sua rentabilidade. Senhas, dados
+                            bancários e conversas pessoais nunca são coletados, e os dados são processados localmente.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal glass neon-border rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex justify-between items-center text-left p-5 md:p-6 font-bold text-white">
+                        <span>Como funciona a emissão de notas fiscais no Gexta?</span>
+                        <span class="material-icons-round faq-icon text-primary">expand_more</span>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-slate-400 pb-5 md:pb-6">O Gexta emite NFC-e (cupom fiscal eletrônico) e NF-e
+                            diretamente integrado ao PDV, agilizando o fechamento de vendas e mantendo sua empresa em dia
+                            com o fisco.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal glass neon-border rounded-2xl overflow-hidden">
+                    <button
+                        class="faq-trigger w-full flex justify-between items-center text-left p-5 md:p-6 font-bold text-white">
+                        <span>Como posso entrar em contato com a Cronatech?</span>
+                        <span class="material-icons-round faq-icon text-primary">expand_more</span>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6">
+                        <p class="text-slate-400 pb-5 md:pb-6">Fale com a gente pelo e-mail <a
+                                href="mailto:contato@cronatech.com.br"
+                                class="text-primary hover:underline">contato@cronatech.com.br</a>. Teremos prazer em
+                            ajudar a escolher a melhor solução para você.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -374,6 +552,36 @@
                     <p class="text-slate-400 text-sm leading-relaxed">
                         Desenvolvendo o futuro da mobilidade com inteligência e tecnologia.
                     </p>
+
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.93H5.56v8.41h2.78zM6.95 8.7a1.61 1.61 0 1 0 0-3.22 1.61 1.61 0 0 0 0 3.22zm11.39 9.64v-4.61c0-2.47-1.32-3.62-3.08-3.62-1.42 0-2.06.78-2.41 1.33v-1.14h-2.78c.04.78 0 8.41 0 8.41h2.78v-4.7c0-.25.02-.5.09-.68.2-.5.66-1.02 1.43-1.02 1.01 0 1.41.77 1.41 1.9v4.5h2.78z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:contato@cronatech.com.br" aria-label="E-mail"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 border border-slate-700 text-slate-400 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all">
+                            <span class="material-icons-round text-xl">email</span>
+                        </a>
+                    </div>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+                        class="inline-flex items-center gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl px-4 py-2 transition-colors w-fit">
+                        <span class="material-icons-round text-green-400 text-2xl">android</span>
+                        <span class="text-left leading-tight">
+                            <span class="block text-[10px] text-slate-400 uppercase tracking-wide">Baixe no</span>
+                            <span class="block text-sm font-bold text-white">Google Play</span>
+                        </span>
+                    </a>
                 </div>
 
                 <div class="flex flex-col gap-4">
@@ -385,10 +593,15 @@
                                 class="text-green-500 hover:text-green-400 transition-colors text-sm font-bold">Gexta
                                 (Novo)</a>
                         </li>
-                        <li><a href="#drivio"
+                        <li><a href="drivio.html"
                                 class="text-slate-400 hover:text-primary transition-colors text-sm">Drivio</a></li>
                         <li><a href="#sobre" class="text-slate-400 hover:text-primary transition-colors text-sm">Sobre
                                 Nós</a></li>
+                        <li><a href="#faq" class="text-slate-400 hover:text-primary transition-colors text-sm">Perguntas
+                                Frequentes</a></li>
+                        <li><a href="termos.html"
+                                class="text-slate-400 hover:text-primary transition-colors text-sm">Termos de Serviço</a>
+                        </li>
                         <li>
                             <a href="javascript:void(0)" id="open-privacy-btn"
                                 class="text-slate-400 hover:text-primary transition-colors text-sm flex items-center">
@@ -424,7 +637,7 @@
 
             <div class="border-t border-slate-800 pt-8 text-center">
                 <p class="text-slate-500 text-sm">
-                    © 2025 Cronatech Sistemas. Todos os direitos reservados.
+                    © <span id="current-year">2025</span> Cronatech Sistemas. Todos os direitos reservados.
                 </p>
             </div>
         </div>
@@ -580,6 +793,49 @@
                 closeModal();
             }
         });
+
+        // Animação de revelação ao rolar
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Dispara contador, se houver
+                    entry.target.querySelectorAll('[data-counter]').forEach(animateCounter);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // Contadores animados
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.counter, 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1500;
+            const start = performance.now();
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Acordeão FAQ
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const item = trigger.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(openItem => openItem.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Ano dinâmico no rodapé
+        const yearEl = document.getElementById('current-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
 </body>
 

@@ -13,6 +13,16 @@
     <meta property="og:image" content="https://cronatech.com.br/img/drivio/corrida-boa.jpg" />
     <meta property="og:url" content="https://cronatech.com.br/drivio" />
     <meta property="og:type" content="website" />
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CWWWKHD0CG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-CWWWKHD0CG');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -49,21 +59,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .glass {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .neon-border {
             border: 1px solid rgba(0, 194, 224, 0.3);
             box-shadow: 0 0 15px rgba(0, 194, 224, 0.15);
         }
+
         .bg-grid-pattern {
             background-image: radial-gradient(rgba(0, 194, 224, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
         .phone-frame {
             border-radius: 2rem;
             border: 6px solid #1e293b;
@@ -72,18 +88,36 @@
             overflow: hidden;
             background: #0f172a;
         }
+
         .snap-carousel {
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-        .snap-carousel::-webkit-scrollbar { display: none; }
-        .snap-carousel > * { scroll-snap-align: center; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+        .snap-carousel::-webkit-scrollbar {
+            display: none;
         }
-        .animate-float { animation: float 5s ease-in-out infinite; }
+
+        .snap-carousel>* {
+            scroll-snap-align: center;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -126,7 +160,8 @@
                 <a href="#como-funciona" class="text-slate-200 hover:text-primary py-2 mobile-link">Como funciona</a>
                 <a href="#features" class="text-slate-200 hover:text-primary py-2 mobile-link">Funcionalidades</a>
                 <a href="#privacidade" class="text-slate-200 hover:text-primary py-2 mobile-link">Privacidade</a>
-                <a href="privacidade.html" class="text-slate-200 hover:text-primary py-2 mobile-link">Política de Privacidade</a>
+                <a href="privacidade.html" class="text-slate-200 hover:text-primary py-2 mobile-link">Política de
+                    Privacidade</a>
             </div>
         </div>
     </header>
@@ -148,7 +183,8 @@
                     </h1>
                     <p class="text-lg md:text-xl text-slate-300 mb-4 font-medium">
                         O Drivio Copiloto analisa cada oferta da Uber e da 99 em tempo real
-                        e mostra o <strong class="text-white">R$/km</strong> na sua tela, na hora.
+                        e mostra o <strong class="text-white">R$/km</strong> na sua tela, na hora, por menos de
+                        R$ 0,34/dia.
                     </p>
                     <p class="text-base text-slate-400 mb-8 max-w-xl mx-auto md:mx-0">
                         Chega de aceitar corrida no escuro. Decida em segundos, bata suas metas
@@ -179,7 +215,8 @@
                             alt="Card do Drivio Copiloto sobre uma oferta da 99: R$2,31/km, R$41,54/hora e nota 4,90 com indicadores verdes de corrida rentável"
                             class="w-full h-auto block" loading="eager">
                     </div>
-                    <div class="phone-frame w-40 sm:w-48 absolute -left-2 sm:left-6 bottom-0 -rotate-6 hidden sm:block opacity-90">
+                    <div
+                        class="phone-frame w-40 sm:w-48 absolute -left-2 sm:left-6 bottom-0 -rotate-6 hidden sm:block opacity-90">
                         <img src="img/drivio/fechamento-expediente.jpg" width="405" height="900"
                             alt="Resumo de fechamento de expediente do Drivio com faturamento, custo de combustível e lucro líquido"
                             class="w-full h-auto block" loading="lazy">
@@ -193,10 +230,16 @@
     <section class="py-6 border-y border-slate-800 bg-slate-950/40">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-300 font-medium">
-                <span class="flex items-center gap-2"><span class="material-icons-round text-primary text-lg">bolt</span>Análise instantânea da oferta</span>
-                <span class="flex items-center gap-2"><span class="material-icons-round text-primary text-lg">speed</span>R$/km e R$/hora na tela</span>
-                <span class="flex items-center gap-2"><span class="material-icons-round text-primary text-lg">directions_car</span>Funciona com Uber e 99</span>
-                <span class="flex items-center gap-2"><span class="material-icons-round text-accent text-lg">redeem</span>10 dias grátis</span>
+                <span class="flex items-center gap-2"><span
+                        class="material-icons-round text-primary text-lg">bolt</span>Análise instantânea da
+                    oferta</span>
+                <span class="flex items-center gap-2"><span
+                        class="material-icons-round text-primary text-lg">speed</span>R$/km e R$/hora na tela</span>
+                <span class="flex items-center gap-2"><span
+                        class="material-icons-round text-primary text-lg">directions_car</span>Funciona com Uber e
+                    99</span>
+                <span class="flex items-center gap-2"><span
+                        class="material-icons-round text-accent text-lg">redeem</span>10 dias grátis</span>
             </div>
         </div>
     </section>
@@ -228,7 +271,8 @@
                 </div>
             </div>
 
-            <div class="snap-carousel flex gap-5 overflow-x-auto px-4 -mx-4 pb-4 md:justify-center md:flex-wrap md:overflow-visible">
+            <div
+                class="snap-carousel flex gap-5 overflow-x-auto px-4 -mx-4 pb-4 md:justify-center md:flex-wrap md:overflow-visible">
                 <figure class="flex-shrink-0 w-56 sm:w-60">
                     <div class="phone-frame">
                         <img src="img/drivio/corrida-boa.jpg" width="405" height="900" loading="lazy"
@@ -281,7 +325,8 @@
                             class="w-full h-auto block">
                     </div>
                     <figcaption class="text-center text-sm text-slate-400 mt-3 px-2">
-                        Expediente ao vivo: ganhos, custo, <strong class="text-white">líquido e meta</strong> sem sair do mapa.
+                        Expediente ao vivo: ganhos, custo, <strong class="text-white">líquido e meta</strong> sem sair
+                        do mapa.
                     </figcaption>
                 </figure>
 
@@ -292,7 +337,8 @@
                             class="w-full h-auto block">
                     </div>
                     <figcaption class="text-center text-sm text-slate-400 mt-3 px-2">
-                        Painel financeiro: <strong class="text-white">lucro líquido real</strong>, metas e corridas do mês.
+                        Painel financeiro: <strong class="text-white">lucro líquido real</strong>, metas e corridas do
+                        mês.
                     </figcaption>
                 </figure>
             </div>
@@ -310,19 +356,28 @@
             </div>
             <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div class="text-center px-4">
-                    <div class="w-14 h-14 rounded-full bg-primary/10 border border-primary/40 text-primary font-black text-xl flex items-center justify-center mx-auto mb-4">1</div>
+                    <div
+                        class="w-14 h-14 rounded-full bg-primary/10 border border-primary/40 text-primary font-black text-xl flex items-center justify-center mx-auto mb-4">
+                        1</div>
                     <h3 class="text-lg font-bold text-white mb-2">Baixe o app</h3>
-                    <p class="text-slate-400 text-sm">Instale o Drivio Copiloto pela Google Play. Os 10 dias grátis começam automaticamente.</p>
+                    <p class="text-slate-400 text-sm">Instale o Drivio Copiloto pela Google Play. Os 10 dias grátis
+                        começam automaticamente.</p>
                 </div>
                 <div class="text-center px-4">
-                    <div class="w-14 h-14 rounded-full bg-primary/10 border border-primary/40 text-primary font-black text-xl flex items-center justify-center mx-auto mb-4">2</div>
+                    <div
+                        class="w-14 h-14 rounded-full bg-primary/10 border border-primary/40 text-primary font-black text-xl flex items-center justify-center mx-auto mb-4">
+                        2</div>
                     <h3 class="text-lg font-bold text-white mb-2">Ative o copiloto</h3>
-                    <p class="text-slate-400 text-sm">Conceda as permissões guiadas pelo app e pronto — o Drivio passa a ler as ofertas na sua tela.</p>
+                    <p class="text-slate-400 text-sm">Conceda as permissões guiadas pelo app e pronto — o Drivio passa a
+                        ler as ofertas na sua tela.</p>
                 </div>
                 <div class="text-center px-4">
-                    <div class="w-14 h-14 rounded-full bg-accent/10 border border-accent/40 text-accent font-black text-xl flex items-center justify-center mx-auto mb-4">3</div>
+                    <div
+                        class="w-14 h-14 rounded-full bg-accent/10 border border-accent/40 text-accent font-black text-xl flex items-center justify-center mx-auto mb-4">
+                        3</div>
                     <h3 class="text-lg font-bold text-white mb-2">Dirija com dados</h3>
-                    <p class="text-slate-400 text-sm">Cada oferta aparece analisada na hora. No fim do dia, seu lucro líquido está calculado.</p>
+                    <p class="text-slate-400 text-sm">Cada oferta aparece analisada na hora. No fim do dia, seu lucro
+                        líquido está calculado.</p>
                 </div>
             </div>
         </div>
@@ -403,7 +458,8 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto glass rounded-3xl p-8 md:p-12 text-center border border-accent/40"
                 style="box-shadow: 0 0 30px rgba(0, 213, 99, 0.15);">
-                <div class="w-16 h-16 rounded-full bg-accent/10 border border-accent/40 flex items-center justify-center mx-auto mb-6">
+                <div
+                    class="w-16 h-16 rounded-full bg-accent/10 border border-accent/40 flex items-center justify-center mx-auto mb-6">
                     <span class="material-icons-round text-accent text-3xl">redeem</span>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
@@ -490,7 +546,8 @@
     </footer>
 
     <!-- CTA fixo mobile -->
-    <div class="fixed bottom-0 left-0 w-full z-40 md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10 px-4 py-3">
+    <div
+        class="fixed bottom-0 left-0 w-full z-40 md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10 px-4 py-3">
         <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
             class="flex items-center justify-center bg-accent hover:bg-accent-light text-slate-900 font-bold py-3 px-6 rounded-full shadow-neon-green transition-all w-full">
             <span class="material-icons-round mr-2">android</span> Testar grátis por 10 dias

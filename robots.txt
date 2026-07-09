@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cronatech.com.br/sitemap.xml
