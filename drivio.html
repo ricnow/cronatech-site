@@ -143,7 +143,7 @@
                 <a href="#features" class="hover:text-primary transition-colors">Funcionalidades</a>
                 <a href="#privacidade" class="hover:text-primary transition-colors">Privacidade</a>
             </nav>
-            <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+            <a href="https://play.google.com/store/apps/details?id=com.drivio.app" data-cta="menu-topo"
                 class="hidden md:inline-flex items-center bg-accent hover:bg-accent-light text-slate-900 font-bold py-2 px-5 rounded-full text-sm shadow-neon-green transition-all">
                 Testar grátis
             </a>
@@ -191,7 +191,7 @@
                         e saiba seu lucro líquido de verdade no fim do dia.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                        <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+                        <a href="https://play.google.com/store/apps/details?id=com.drivio.app" data-cta="hero"
                             class="bg-accent hover:bg-accent-light text-slate-900 font-bold py-4 px-8 rounded-full shadow-neon-green transition-all transform hover:scale-105 flex items-center justify-center text-lg">
                             <span class="material-icons-round mr-2">android</span> Testar grátis por 10 dias
                         </a>
@@ -472,7 +472,7 @@
                     Rode uma semana com o copiloto ligado e compare seu fechamento.
                     Se não valer a pena, é só desinstalar.
                 </p>
-                <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+                <a href="https://play.google.com/store/apps/details?id=com.drivio.app" data-cta="card-trial"
                     class="inline-flex items-center bg-accent hover:bg-accent-light text-slate-900 font-bold py-4 px-10 rounded-full shadow-neon-green transition-all transform hover:scale-105 text-lg">
                     <span class="material-icons-round mr-2 text-2xl">android</span> Começar meus 10 dias grátis
                 </a>
@@ -524,7 +524,7 @@
                 Baixe o Drivio Copiloto, ative seus 10 dias grátis e descubra quanto
                 você realmente ganha por km rodado.
             </p>
-            <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+            <a href="https://play.google.com/store/apps/details?id=com.drivio.app" data-cta="cta-final"
                 class="inline-flex items-center bg-accent hover:bg-accent-light text-slate-900 font-bold py-4 px-10 rounded-full shadow-neon-green transition-all transform hover:scale-105 text-lg">
                 <span class="material-icons-round mr-2 text-2xl">android</span> Testar grátis por 10 dias
             </a>
@@ -548,7 +548,7 @@
     <!-- CTA fixo mobile -->
     <div
         class="fixed bottom-0 left-0 w-full z-40 md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10 px-4 py-3">
-        <a href="https://play.google.com/store/apps/details?id=com.drivio.app"
+        <a href="https://play.google.com/store/apps/details?id=com.drivio.app" data-cta="barra-fixa-mobile"
             class="flex items-center justify-center bg-accent hover:bg-accent-light text-slate-900 font-bold py-3 px-6 rounded-full shadow-neon-green transition-all w-full">
             <span class="material-icons-round mr-2">android</span> Testar grátis por 10 dias
         </a>
@@ -577,6 +577,33 @@
                 icon.innerText = 'menu';
             });
         });
+
+        // Rastreio de origem e de cliques no botão de download
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const origem = params.get('utm_source') || 'direto';
+            const utms = ['utm_source', 'utm_medium', 'utm_campaign']
+                .filter(k => params.has(k))
+                .map(k => k + '=' + params.get(k))
+                .join('&');
+
+            document.querySelectorAll('a[href^="https://play.google.com"]').forEach(link => {
+                // Repassa a origem para a Play Store (Install Referrer)
+                if (utms) {
+                    const url = new URL(link.href);
+                    url.searchParams.set('referrer', utms);
+                    link.href = url.toString();
+                }
+                link.addEventListener('click', () => {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'clique_baixar', {
+                            posicao: link.dataset.cta || 'desconhecida',
+                            origem: origem
+                        });
+                    }
+                });
+            });
+        })();
     </script>
 </body>
 
